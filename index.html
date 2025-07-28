@@ -6,69 +6,260 @@
   <title>FUWAMOCO - Fluffy & Fuzzy BAU BAU Love</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/forms"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <link rel="icon" href="https://static.wikia.nocookie.net/virtualyoutuber/images/a/ae/Pero_transparent.png/revision/latest?cb=20240804210041">
+  <style>
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    body {
+      background-image: url('https://pbs.twimg.com/media/F25dx_ibkAAukuC?format=jpg&name=large');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .text-fuwawa {
+      color: #73D2F3;
+    }
+    .text-mococo {
+      color: #FFB6C1;
+    }
+    .bg-fuwawa {
+      background-color: #73D2F3;
+    }
+    .bg-mococo {
+      background-color: #FFB6C1;
+    }
+    .gallery-img {
+      transition: transform 0.3s ease-in-out;
+    }
+    .gallery-img:hover {
+      transform: scale(1.05);
+    }
+    @keyframes slide-in {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    .header-animation {
+      animation: slide-in 0.5s ease-in-out;
+    }
+    .gradient-text {
+      background: -webkit-linear-gradient(left, #73D2F3, #FFB6C1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .fade-in {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+  </style>
 </head>
-<body class=" bg-gradient-to-r 
-     <body
-  class="min-h-screen 
-         bg-gradient-to-r 
-         from-[#1E90FF] 
-         via-white 
-         to-[#FF69B4] 
-         text-gray-800 
-         font-sans"
->
+<body class="text-gray-800 font-sans">
+
+  <div class="overlay"></div>
+  <div id="particles-js"></div>
 
   <!-- Nav (transparent) -->
-  <header class="w-full px-6 py-4">
+  <header class="w-full px-6 py-4 bg-white bg-opacity-80 backdrop-blur-md sticky top-0 z-50 header-animation">
     <div class="max-w-4xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-[#FF69B4]">FUWAMOCO 🐾</h1>
-      <nav class="space-x-4 text-[#FF69B4] font-semibold">
-        <a href="#home" class="hover:underline">Home</a>
-        <a href="#gallery" class="hover:underline">Gallery</a>
-        <a href="#about" class="hover:underline">About</a>
+      <h1 class="text-2xl font-bold text-mococo">FUWAMOCO 🐾</h1>
+      <nav class="space-x-4 font-semibold">
+        <a href="#home" class="text-fuwawa hover:underline">Home</a>
+        <a href="#gallery" class="text-mococo hover:underline">Gallery</a>
+        <a href="#about" class="text-fuwawa hover:underline">About</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="text-center py-20 bg-gradient-to-r from-pink-200 via-pink-100 to-white">
+  <section id="home" class="text-center py-20">
     <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-4xl md:text-6xl font-bold text-pink-700">Welcome to the BAU BAU World!</h2>
-      <p class="mt-4 text-lg md:text-xl text-pink-600">We love you Princess Fuwawa 🩵 and Princess Mococo 🩷</p>
+      <h2 class="text-4xl md:text-6xl font-bold gradient-text">Welcome to the BAU BAU World!</h2>
+      <p class="mt-4 text-lg md:text-xl text-white">We love you Princess Fuwawa 🩵 and Princess Mococo 🩷</p>
       <img src="https://pbs.twimg.com/media/GFaIaSFaIAE7F7N?format=jpg&name=large" alt="FUWAMOCO Cuties" class="mx-auto mt-8 rounded-2xl shadow-xl border-4 border-white"/>
     </div>
   </section>
 
   <!-- Illustration Gallery -->
-  <section id="gallery" class="py-16 bg-white">
+  <section id="gallery" class="py-16 bg-white bg-opacity-80 backdrop-blur-md">
     <div class="max-w-6xl mx-auto px-4">
-      <h3 class="text-3xl font-bold text-center text-pink-700 mb-8">Adorable FUWAMOCO Artworks</h3>
+      <h3 class="text-3xl font-bold text-center gradient-text mb-8">Adorable FUWAMOCO Artworks</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <img src="https://pbs.twimg.com/media/Gr8EztJW0AA1QQg?format=jpg&name=large" alt="FUWAMOCO Art 1" class="rounded-xl shadow hover:scale-105 transition transform duration-300">
-        <img src="https://pbs.twimg.com/media/GR3uscqagAAcXfv?format=jpg&name=large" alt="FUWAMOCO Art 2" class="rounded-xl shadow hover:scale-105 transition transform duration-300">
-        <img src="https://pbs.twimg.com/media/GtmbZsLbUAAGN54?format=jpg&name=4096x4096" alt="FUWAMOCO Art 3" class="rounded-xl shadow hover:scale-105 transition transform duration-300">
-        <img src="https://pbs.twimg.com/media/GJTa7HxWcAA8CqH?format=jpg&name=4096x4096" alt="FUWAMOCO Art 4" class="rounded-xl shadow hover:scale-105 transition transform duration-300">
-
-        <!-- Add more artwork images here -->
+        <img src="https://pbs.twimg.com/media/Gr8EztJW0AA1QQg?format=jpg&name=large" alt="FUWAMOCO Art 1" class="rounded-xl shadow gallery-img">
+        <img src="https://pbs.twimg.com/media/GR3uscqagAAcXfv?format=jpg&name=large" alt="FUWAMOCO Art 2" class="rounded-xl shadow gallery-img">
+        <img src="https://pbs.twimg.com/media/GtmbZsLbUAAGN54?format=jpg&name=4096x4096" alt="FUWAMOCO Art 3" class="rounded-xl shadow gallery-img">
+        <img src="https://pbs.twimg.com/media/GJTa7HxWcAA8CqH?format=jpg&name=4096x4096" alt="FUWAMOCO Art 4" class="rounded-xl shadow gallery-img">
       </div>
     </div>
   </section>
 
   <!-- About FUWAMOCO -->
-  <section id="about" class="py-20 bg-pink-50">
+  <section id="about" class="py-20 fade-in">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h3 class="text-3xl font-bold text-pink-700">Who Are FUWAMOCO?</h3>
-      <p class="mt-4 text-pink-600 text-lg leading-relaxed">
+      <h3 class="text-3xl font-bold gradient-text">Who Are FUWAMOCO?</h3>
+      <p class="mt-4 text-white text-lg leading-relaxed">
         FUWAWA Abyssgard 🩵 and MOCOCO Abyssgard 🩷 are the magical twin doggos of hololive English -Advent-, always spreading fluff and love! With their "BAU BAU" energy and retro anime vibes, they make hearts flutter every day!
       </p>
-      <p class="mt-4 text-pink-600 italic">"BAU BAU is love, BAU BAU is life!"</p>
+      <p class="mt-4 text-white italic">"BAU BAU is love, BAU BAU is life!"</p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-white border-t py-6 text-center text-pink-500">
+  <footer class="bg-white bg-opacity-80 backdrop-blur-md border-t py-6 text-center text-fuwawa fade-in">
     Made with HTML and CSS by Wicharit Abyssgard 🩵🩷 | © 2025 Viewzaza
   </footer>
 
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": ["#73D2F3", "#FFB6C1"]
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 5,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 6,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 400,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.5,
+      rootMargin: "0px 0px -100px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(
+      entries,
+      appearOnScroll
+    ) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add("visible");
+          appearOnScroll.unobserve(entry.target);
+        }
+      });
+    },
+    appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
 </body>
 </html>

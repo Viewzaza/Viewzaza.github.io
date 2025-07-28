@@ -68,6 +68,7 @@ body {
 
 .slideshow-img {
   transition: opacity 1s ease-in-out;
+
   height: 400px;
   object-fit: cover;
 }
@@ -75,6 +76,7 @@ body {
 .gallery-img {
   height: 300px;
   object-fit: cover;
+
 }
 
 header {
@@ -252,6 +254,7 @@ header {
   padding-bottom: 1.5rem;
 }
 
+
 .aspect-w-16 {
   --tw-aspect-w: 16;
 }
@@ -274,3 +277,4 @@ header {
     bottom: 0;
     left: 0;
 }
+

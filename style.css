@@ -245,6 +245,7 @@ header {
   padding-bottom: 1.5rem;
 }
 
+
 .aspect-w-16 {
   --tw-aspect-w: 16;
 }
@@ -267,3 +268,4 @@ header {
     bottom: 0;
     left: 0;
 }
+

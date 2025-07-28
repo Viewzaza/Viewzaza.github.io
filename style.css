@@ -68,6 +68,15 @@ body {
 
 .slideshow-img {
   transition: opacity 1s ease-in-out;
+
+  height: 400px;
+  object-fit: cover;
+}
+
+.gallery-img {
+  height: 300px;
+  object-fit: cover;
+
 }
 
 header {

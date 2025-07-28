@@ -62,23 +62,15 @@
     .fade-in.visible {
       opacity: 1;
     }
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: -1;
+
+    .slideshow-img {
+      transition: opacity 1s ease-in-out;
+
     }
   </style>
 </head>
 <body class="text-gray-800 font-sans">
 
-
-  <a href="https://pbs.twimg.com/media/F25dx_ibkAAukuC?format=jpg&name=large" target="_blank">
-    <div class="overlay"></div>
-  </a>
 
   <div id="particles-js"></div>
 
@@ -96,7 +88,8 @@
 
   <!-- Hero Section -->
 
-  <section id="home" class="text-center py-20" style="background-color: rgba(0, 0, 0, 0.5);">
+  <section id="home" class="text-center py-20 bg-white bg-opacity-10 backdrop-blur-md rounded-2xl">
+
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-4xl md:text-6xl font-bold gradient-text">Welcome to the BAU BAU World!</h2>
       <p class="mt-4 text-lg md:text-xl text-white">We love you Princess Fuwawa 🩵 and Princess Mococo 🩷</p>
@@ -125,7 +118,8 @@
   </section>
 
   <!-- About FUWAMOCO -->
-  <section id="about" class="py-20 fade-in" style="background-color: rgba(0, 0, 0, 0.5);">
+
+  <section id="about" class="py-20 fade-in bg-white bg-opacity-10 backdrop-blur-md rounded-2xl">
 
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h3 class="text-3xl font-bold gradient-text">Who Are FUWAMOCO?</h3>
@@ -293,11 +287,18 @@
       var i;
       var x = document.getElementsByClassName("slideshow-img");
       for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
+
+        x[i].style.opacity = "0";
       }
       slideIndex++;
       if (slideIndex > x.length) {slideIndex = 1}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
       x[slideIndex-1].style.display = "block";
+      setTimeout(function() {
+        x[slideIndex-1].style.opacity = "1";
+      }, 10);
       setTimeout(carousel, 10000); // Change image every 10 seconds
     }
 

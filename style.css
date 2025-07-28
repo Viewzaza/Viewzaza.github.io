@@ -69,12 +69,16 @@ body {
 .slideshow-img {
   transition: opacity 1s ease-in-out;
 
-  height: 400px;
+  max-width: 100%;
+  height: auto;
+
   object-fit: cover;
 }
 
 .gallery-img {
-  height: 300px;
+
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
 
 }

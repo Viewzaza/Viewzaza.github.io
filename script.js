@@ -161,3 +161,71 @@ function carousel() {
   }, 10);
   setTimeout(carousel, 10000); // Change image every 10 seconds
 }
+
+const container = document.getElementById('pon-de-ring-container');
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true });
+renderer.setSize(container.offsetWidth, container.offsetHeight);
+container.appendChild(renderer.domElement);
+
+const ponDeRing = new THREE.Group();
+
+const colors = [0x73D2F3, 0xFFB6C1];
+for (let i = 0; i < 8; i++) {
+  const geometry = new THREE.SphereGeometry(1, 32, 32);
+  const material = new THREE.MeshBasicMaterial({ color: colors[i % 2] });
+  const sphere = new THREE.Mesh(geometry, material);
+  const angle = (i / 8) * Math.PI * 2;
+  sphere.position.x = Math.cos(angle) * 3;
+  sphere.position.y = Math.sin(angle) * 3;
+  ponDeRing.add(sphere);
+}
+
+scene.add(ponDeRing);
+
+camera.position.z = 10;
+
+function animate() {
+  requestAnimationFrame(animate);
+  ponDeRing.rotation.z += 0.01;
+  renderer.render(scene, camera);
+}
+
+animate();
+
+let isDragging = false;
+let previousMousePosition = {
+    x: 0,
+    y: 0
+};
+
+container.addEventListener('mousedown', e => {
+    isDragging = true;
+});
+container.addEventListener('mouseup', e => {
+    isDragging = false;
+});
+container.addEventListener('mousemove', e => {
+    const deltaMove = {
+        x: e.offsetX - previousMousePosition.x,
+        y: e.offsetY - previousMousePosition.y
+    };
+
+    if (isDragging) {
+        const deltaRotationQuaternion = new THREE.Quaternion()
+            .setFromEuler(new THREE.Euler(
+                (deltaMove.y * Math.PI / 180),
+                (deltaMove.x * Math.PI / 180),
+                0,
+                'XYZ'
+            ));
+
+        ponDeRing.quaternion.multiplyQuaternions(deltaRotationQuaternion, ponDeRing.quaternion);
+    }
+
+    previousMousePosition = {
+        x: e.offsetX,
+        y: e.offsetY
+    };
+});

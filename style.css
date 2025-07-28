@@ -68,15 +68,19 @@ body {
 
 .slideshow-img {
   transition: opacity 1s ease-in-out;
+
   max-width: 100%;
   height: auto;
+
   object-fit: cover;
 }
 
 .gallery-img {
+
   max-width: 100%;
   height: auto;
   object-fit: cover;
+
 }
 
 header {
@@ -254,6 +258,7 @@ header {
   padding-bottom: 1.5rem;
 }
 
+
 .aspect-w-16 {
   --tw-aspect-w: 16;
 }
@@ -276,3 +281,4 @@ header {
     bottom: 0;
     left: 0;
 }
+

@@ -21,17 +21,21 @@ particlesJS("particles-js", {
       }
     },
     "opacity": {
+
       "value": 0.8,
       "random": true,
       "anim": {
         "enable": true,
+
         "speed": 1,
         "opacity_min": 0.1,
         "sync": false
       }
     },
     "size": {
+
       "value": 8,
+
       "random": true,
       "anim": {
         "enable": false,
@@ -229,3 +233,4 @@ container.addEventListener('mousemove', e => {
         y: e.offsetY
     };
 });
+

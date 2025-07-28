@@ -6,67 +6,77 @@
   <title>FUWAMOCO - Fluffy & Fuzzy BAU BAU Love</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/forms"></script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🩷</text></svg>">
+  <style>
+    body {
+      background-image: url('https://pbs.twimg.com/media/F25dx_ibkAAukuC?format=jpg&name=large');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .text-fuwawa {
+      color: #73D2F3;
+    }
+    .text-mococo {
+      color: #FFB6C1;
+    }
+    .bg-fuwawa {
+      background-color: #73D2F3;
+    }
+    .bg-mococo {
+      background-color: #FFB6C1;
+    }
+  </style>
 </head>
-<body class=" bg-gradient-to-r 
-     <body
-  class="min-h-screen 
-         bg-gradient-to-r 
-         from-[#1E90FF] 
-         via-white 
-         to-[#FF69B4] 
-         text-gray-800 
-         font-sans"
->
+<body class="text-gray-800 font-sans">
 
   <!-- Nav (transparent) -->
-  <header class="w-full px-6 py-4">
+  <header class="w-full px-6 py-4 bg-white bg-opacity-80 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-4xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-[#FF69B4]">FUWAMOCO 🐾</h1>
-      <nav class="space-x-4 text-[#FF69B4] font-semibold">
-        <a href="#home" class="hover:underline">Home</a>
-        <a href="#gallery" class="hover:underline">Gallery</a>
-        <a href="#about" class="hover:underline">About</a>
+      <h1 class="text-2xl font-bold text-mococo">FUWAMOCO 🐾</h1>
+      <nav class="space-x-4 font-semibold">
+        <a href="#home" class="text-fuwawa hover:underline">Home</a>
+        <a href="#gallery" class="text-mococo hover:underline">Gallery</a>
+        <a href="#about" class="text-fuwawa hover:underline">About</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="text-center py-20 bg-gradient-to-r from-pink-200 via-pink-100 to-white">
+  <section id="home" class="text-center py-20">
     <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-4xl md:text-6xl font-bold text-pink-700">Welcome to the BAU BAU World!</h2>
-      <p class="mt-4 text-lg md:text-xl text-pink-600">We love you Princess Fuwawa 🩵 and Princess Mococo 🩷</p>
+      <h2 class="text-4xl md:text-6xl font-bold text-mococo">Welcome to the BAU BAU World!</h2>
+      <p class="mt-4 text-lg md:text-xl text-fuwawa">We love you Princess Fuwawa 🩵 and Princess Mococo 🩷</p>
       <img src="https://pbs.twimg.com/media/GFaIaSFaIAE7F7N?format=jpg&name=large" alt="FUWAMOCO Cuties" class="mx-auto mt-8 rounded-2xl shadow-xl border-4 border-white"/>
     </div>
   </section>
 
   <!-- Illustration Gallery -->
-  <section id="gallery" class="py-16 bg-white">
+  <section id="gallery" class="py-16 bg-white bg-opacity-80 backdrop-blur-md">
     <div class="max-w-6xl mx-auto px-4">
-      <h3 class="text-3xl font-bold text-center text-pink-700 mb-8">Adorable FUWAMOCO Artworks</h3>
+      <h3 class="text-3xl font-bold text-center text-mococo mb-8">Adorable FUWAMOCO Artworks</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <img src="https://pbs.twimg.com/media/Gr8EztJW0AA1QQg?format=jpg&name=large" alt="FUWAMOCO Art 1" class="rounded-xl shadow hover:scale-105 transition transform duration-300">
         <img src="https://pbs.twimg.com/media/GR3uscqagAAcXfv?format=jpg&name=large" alt="FUWAMOCO Art 2" class="rounded-xl shadow hover:scale-105 transition transform duration-300">
         <img src="https://pbs.twimg.com/media/GtmbZsLbUAAGN54?format=jpg&name=4096x4096" alt="FUWAMOCO Art 3" class="rounded-xl shadow hover:scale-105 transition transform duration-300">
         <img src="https://pbs.twimg.com/media/GJTa7HxWcAA8CqH?format=jpg&name=4096x4096" alt="FUWAMOCO Art 4" class="rounded-xl shadow hover:scale-105 transition transform duration-300">
-
-        <!-- Add more artwork images here -->
       </div>
     </div>
   </section>
 
   <!-- About FUWAMOCO -->
-  <section id="about" class="py-20 bg-pink-50">
+  <section id="about" class="py-20">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h3 class="text-3xl font-bold text-pink-700">Who Are FUWAMOCO?</h3>
-      <p class="mt-4 text-pink-600 text-lg leading-relaxed">
+      <h3 class="text-3xl font-bold text-mococo">Who Are FUWAMOCO?</h3>
+      <p class="mt-4 text-fuwawa text-lg leading-relaxed">
         FUWAWA Abyssgard 🩵 and MOCOCO Abyssgard 🩷 are the magical twin doggos of hololive English -Advent-, always spreading fluff and love! With their "BAU BAU" energy and retro anime vibes, they make hearts flutter every day!
       </p>
-      <p class="mt-4 text-pink-600 italic">"BAU BAU is love, BAU BAU is life!"</p>
+      <p class="mt-4 text-mococo italic">"BAU BAU is love, BAU BAU is life!"</p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-white border-t py-6 text-center text-pink-500">
+  <footer class="bg-white bg-opacity-80 backdrop-blur-md border-t py-6 text-center text-fuwawa">
     Made with HTML and CSS by Wicharit Abyssgard 🩵🩷 | © 2025 Viewzaza
   </footer>
 

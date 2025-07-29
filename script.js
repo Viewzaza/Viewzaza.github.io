@@ -21,21 +21,17 @@ particlesJS("particles-js", {
       }
     },
     "opacity": {
-
       "value": 0.8,
       "random": true,
       "anim": {
         "enable": true,
-
         "speed": 1,
         "opacity_min": 0.1,
         "sync": false
       }
     },
     "size": {
-
       "value": 8,
-
       "random": true,
       "anim": {
         "enable": false,
@@ -151,18 +147,23 @@ carousel();
 function carousel() {
   var i;
   var x = document.getElementsByClassName("slideshow-img");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.opacity = "0";
+  var previous = slideIndex - 1;
+  if (previous < 0) {
+    previous = x.length - 1;
   }
+
+  for (i = 0; i < x.length; i++) {
+    x[i].classList.remove("active");
+    x[i].classList.remove("previous");
+  }
+
+  x[previous].classList.add("previous");
+  x[slideIndex].classList.add("active");
+
   slideIndex++;
-  if (slideIndex > x.length) {slideIndex = 1}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
+  if (slideIndex >= x.length) {
+    slideIndex = 0;
   }
-  x[slideIndex-1].style.display = "block";
-  setTimeout(function() {
-    x[slideIndex-1].style.opacity = "1";
-  }, 10);
   setTimeout(carousel, 10000); // Change image every 10 seconds
 }
 
@@ -190,19 +191,29 @@ scene.add(ponDeRing);
 
 camera.position.z = 10;
 
-function animate() {
-  requestAnimationFrame(animate);
-  ponDeRing.rotation.z += 0.01;
-  renderer.render(scene, camera);
-}
-
-animate();
-
+let velocity = new THREE.Vector3(0, 0, 0.01);
 let isDragging = false;
 let previousMousePosition = {
     x: 0,
     y: 0
 };
+
+function animate() {
+  requestAnimationFrame(animate);
+
+  if (!isDragging) {
+    ponDeRing.rotation.x += velocity.x;
+    ponDeRing.rotation.y += velocity.y;
+    ponDeRing.rotation.z += velocity.z;
+
+    velocity.multiplyScalar(0.95);
+  }
+
+  renderer.render(scene, camera);
+}
+
+animate();
+
 
 container.addEventListener('mousedown', e => {
     isDragging = true;
@@ -226,6 +237,9 @@ container.addEventListener('mousemove', e => {
             ));
 
         ponDeRing.quaternion.multiplyQuaternions(deltaRotationQuaternion, ponDeRing.quaternion);
+
+        velocity.x = (deltaMove.y * Math.PI / 180) * 0.1;
+        velocity.y = (deltaMove.x * Math.PI / 180) * 0.1;
     }
 
     previousMousePosition = {
@@ -233,4 +247,3 @@ container.addEventListener('mousemove', e => {
         y: e.offsetY
     };
 });
-
